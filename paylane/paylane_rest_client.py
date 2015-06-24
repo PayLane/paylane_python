@@ -127,6 +127,22 @@ class PayLaneRestClient(object):
         """
         return self._call('sofort/sale', 'post', params)
 
+    def ideal_sale(self, params):
+        """iDeal sale
+
+        @param params: Ideal transaction params
+        @return: dict
+        """
+        return self._call('ideal/sale', 'post', params)
+
+    def ideal_bank_codes(self):
+        """iDeal bank list
+
+        @return: dict
+        """
+        return self._call('ideal/bankcodes', 'get')
+
+
     def bank_transfer_sale(self, params):
         """Bank transfer sale
 
