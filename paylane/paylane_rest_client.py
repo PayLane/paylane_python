@@ -159,6 +159,14 @@ class PayLaneRestClient(object):
         """
         return self._call('paypal/sale', 'post', params)
 
+    def paypal_stop_recurring(self, params):
+        """Cancels Paypal recurring profile
+
+        @param params: Paypal params
+        @return dict
+        """
+        return self._call('paypal/stopRecurring', 'post', params)
+
     def resale_by_sale(self, params):
         """ Performs resale by sale ID
 
