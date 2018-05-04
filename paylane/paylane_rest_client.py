@@ -11,7 +11,7 @@ log = logging.getLogger(__name__)
 
 class PayLaneRestClient(object):
     """Client library for Paylane REST Server.
-    More info at: http://devzone.paylane.com    
+    More info at: http://devzone.paylane.com
     """
 
     API_URL = 'https://direct.paylane.com/rest/'
@@ -222,6 +222,22 @@ class PayLaneRestClient(object):
         @return: dict
         """
         return self._call('cards/checkByToken', 'get', params)
+
+    def apple_pay_sale(self, params):
+        """Perform Apple Pay sale
+
+        @param params: Apple Pay params
+        @return: dict
+        """
+        return self._call('applepay/sale', 'post', params)
+
+    def apple_pay_authorization(self, params):
+        """Perform Apple Pay authorization
+
+        @param params: Apple Pay params
+        @return: dict
+        """
+        return self._call('applepay/authorization', 'post', params)
 
     def is_success(self):
         """Request state getter
